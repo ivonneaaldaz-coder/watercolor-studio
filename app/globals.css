@@ -54,3 +54,18 @@
 .hybrid-watercolor-actions{justify-content:flex-end!important}
 /* Minimal homepage: statement, discovery and watercolor */
 /* Pigment accent — shared with the homepage watercolor */
+
+/* Paint standalone interface */
+body{transition:background-color .25s,color .25s}
+.paint-site-header{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:24px clamp(24px,5vw,72px) 0;gap:20px}
+.paint-wordmark{font-family:Georgia,serif;font-size:30px;letter-spacing:-.075em;text-decoration:none;color:var(--ink)}
+.paint-dot{color:#b66c79}
+.paint-header-right{display:flex;align-items:center;gap:24px}
+.paint-header-label{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.paint-theme-toggle{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:50%;height:42px;width:42px;display:grid;place-items:center;font-size:24px;line-height:1}
+.paint-theme-toggle:hover{background:var(--line)}
+:root[data-theme="dark"]{--bg:#171819;--ink:#eeece6;--muted:#a5a5a2;--line:#454648}
+:root[data-theme="dark"] .hybrid-watercolor{background:#202122;color:var(--ink)}
+:root[data-theme="dark"] .hybrid-watercolor-paper{background:#fbf9f5}
+:root[data-theme="dark"] .hybrid-watercolor-paper canvas{background:#fbf9f5}
+@media(max-width:650px){.paint-header-label{display:none}.paint-site-header{padding-top:16px}}
