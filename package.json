@@ -11,7 +11,9 @@
     "next": "16.4.5",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "convex": "^1.29.0"
+    "convex": "^1.29.0",
+    "@convex-dev/auth": "^0.0.90",
+    "@auth/core": "^0.37.0"
   },
   "devDependencies": {
     "typescript": "^5.9.3",
