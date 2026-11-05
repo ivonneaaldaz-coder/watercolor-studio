@@ -1,0 +1,56 @@
+:root{--bg:#f5f3ee;--ink:#202020;--muted:#76736f;--line:#d8d4cd}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button,input{font:inherit}button{cursor:pointer}
+/* Hybrid watercolor: intentionally spacious and scoped; original site theme remains authoritative. */
+.hybrid-watercolor-section{padding-top:clamp(100px,12vw,190px)!important;padding-bottom:clamp(100px,12vw,190px)!important;border-top:1px solid var(--line)}
+.hybrid-watercolor-heading{max-width:900px;margin:0 auto 55px;text-align:center}
+.hybrid-watercolor-heading span{font-size:10px;letter-spacing:.16em;color:var(--muted)}
+.hybrid-watercolor-heading h2{font:400 clamp(46px,6vw,86px)/1.05 Georgia,'Times New Roman',serif;letter-spacing:-.055em;margin:18px 0}
+.hybrid-watercolor-heading p{color:var(--muted);font-size:15px}
+.hybrid-watercolor{max-width:1100px;margin:auto;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.hybrid-watercolor-bar{height:44px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 18px;font-size:11px}
+.hybrid-watercolor-body{display:grid;grid-template-columns:75px minmax(0,1fr);height:clamp(360px,42vw,560px)}
+.hybrid-watercolor-tools{border-right:1px solid var(--line);display:flex;align-items:center;flex-direction:column;gap:12px;padding:15px 7px;overflow-y:auto}
+.hybrid-watercolor-tools>button{width:38px;height:38px;background:transparent;color:inherit;border:1px solid transparent;cursor:pointer;font-size:22px}
+.hybrid-watercolor-tools>button[aria-pressed=true]{border-color:var(--ink)}
+.hybrid-watercolor-tools label{font-size:10px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.hybrid-watercolor-tools input[type=range]{width:56px}
+.hybrid-watercolor-tools input[type=color]{width:32px;height:30px;padding:0;background:none;border:1px solid var(--line);cursor:pointer}
+.hybrid-watercolor-colors{display:grid;grid-template-columns:repeat(2,20px);gap:8px;margin-top:auto}
+.hybrid-watercolor-colors button{width:20px;height:20px;border-radius:50%;border:2px solid transparent;cursor:pointer}
+.hybrid-watercolor-colors button[aria-pressed=true]{outline:1px solid var(--ink)}
+.hybrid-watercolor-paper{position:relative;min-width:0;overflow:hidden;background:#fbf9f5}
+.hybrid-watercolor-paper canvas{display:block;width:100%;height:100%;touch-action:none;cursor:crosshair}
+.hybrid-watercolor-paper>span{position:absolute;bottom:15px;left:18px;color:#76736f;font-size:11px;pointer-events:none}
+.hybrid-watercolor-actions{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:16px 18px;border-top:1px solid var(--line);font-size:10px}
+.hybrid-watercolor-actions>div{display:flex;gap:7px;flex-wrap:wrap}
+.hybrid-watercolor-actions button{border:1px solid var(--line);background:transparent;color:inherit;padding:9px 12px;font:inherit;cursor:pointer}
+.hybrid-watercolor-actions button:disabled{opacity:.3;cursor:default}
+.hybrid-watercolor-heading>h2{margin-bottom:28px}
+.watercolor-toolbox{position:relative;overflow:visible!important;gap:8px!important}
+.watercolor-toolbox>button{display:grid;place-items:center;min-height:36px;min-width:36px;padding:7px!important}
+.watercolor-toolbox>button svg{display:block}
+.watercolor-size-dot{display:block;border:1.5px solid currentColor;border-radius:50%;max-width:22px;max-height:22px}
+.watercolor-active-color{width:26px;height:26px;border:1px solid #999;outline:1px solid #333;outline-offset:2px;margin:12px auto}
+.watercolor-tool-panel{position:absolute;left:calc(100% + 10px);top:15%;z-index:12;width:210px;padding:16px;background:#191919;border:1px solid #555;color:#f5f3ee;box-shadow:0 12px 30px #0008;font-size:12px}
+.watercolor-tool-panel strong{display:block;font-size:13px;margin-bottom:16px;font-weight:500}
+.watercolor-tool-panel label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0;font-size:11px}
+.watercolor-tool-panel input[type="range"]{accent-color:#c6a476;width:100%}
+.watercolor-tool-panel input[type="color"]{width:38px;height:32px;border:0;background:transparent;cursor:pointer}
+.watercolor-size-panel{width:105px;min-height:190px;display:flex;align-items:center;flex-direction:column}
+.watercolor-size-panel label{white-space:nowrap}
+.watercolor-size-panel input[type="range"]{writing-mode:vertical-lr;direction:rtl;appearance:slider-vertical;width:22px;height:125px}
+.watercolor-swatch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.watercolor-swatch-grid button{width:30px;height:30px;min-width:0;min-height:0;border:1px solid #999;border-radius:50%;padding:0}
+.watercolor-swatch-grid button[aria-pressed="true"]{outline:2px solid #f5f3ee;outline-offset:3px}
+.watercolor-mix-inputs{display:flex;gap:15px}
+.watercolor-mix-inputs label{flex-direction:column}
+.watercolor-mixer-panel>label{display:block}
+.watercolor-mix-preview{height:36px;border:1px solid #777;margin:12px 0}
+.watercolor-panel-action{display:block;width:100%;padding:10px 8px;border:1px solid #777;background:transparent;color:inherit;text-align:center;cursor:pointer}
+@media(max-width:650px){.watercolor-tool-panel{width:170px;left:calc(100% + 4px);padding:10px}.watercolor-size-panel{width:85px}}
+.watercolor-active-color{position:relative;display:block;cursor:pointer;overflow:visible}
+.watercolor-active-color input[type=color]{position:absolute;inset:-5px;width:calc(100% + 10px);height:calc(100% + 10px);opacity:0;cursor:pointer;padding:0;border:0}
+.watercolor-toolbox>button{position:relative}
+.watercolor-toolbox>button[data-tooltip]:hover:after,.watercolor-toolbox>button[data-tooltip]:focus-visible:after{content:attr(data-tooltip);position:absolute;left:calc(100% + 13px);top:50%;transform:translateY(-50%);background:#252525;border:1px solid #555;color:#f5f3ee;white-space:nowrap;padding:8px 11px;font-size:11px;font-weight:400;z-index:30;pointer-events:none}
+.hybrid-watercolor-actions{justify-content:flex-end!important}
+/* Minimal homepage: statement, discovery and watercolor */
+/* Pigment accent — shared with the homepage watercolor */
