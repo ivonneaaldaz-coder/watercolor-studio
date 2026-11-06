@@ -38,7 +38,7 @@ export default function WatercolorStudio(){
  }oc.putImageData(img,0,0);ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.drawImage(f.base,0,0,canvas.width,canvas.height);ctx.globalCompositeOperation="multiply";ctx.drawImage(off,0,0,canvas.width,canvas.height);ctx.restore();
  };
  const fluidTick=()=>{const f=fluid.current;if(!f)return;f.raf=0;const {W,H}=f,N=W*H;const nw=new Float32Array(N),nx=new Float32Array(N),ny=new Float32Array(N),np=f.pigment.map(()=>new Float32Array(N));
- for(let y=2;y<H-2;y++)for(let x=2;x<W-2;x++){const i=y*W+x,wi=f.wet[i];if(wi<.00002)continue;
+ for(let y=2;y<H-2;y++)for(let x=2;x<W-2;x++){const i=y*W+x,wi=f.wet[i];if(wi<.00002){for(let k=0;k<f.pigment.length;k++)np[k][i]+=f.pigment[k][i];continue;}
  const l=i-1,r=i+1,u=i-W,d=i+W,gx=f.wet[l]-f.wet[r],gy=f.wet[u]-f.wet[d];
  const vx=Math.max(-3.5,Math.min(3.5,f.vx[i]*.94+gx*.24+(f.paper[r]-f.paper[l])*wi*.13));
  const vy=Math.max(-3.5,Math.min(3.5,f.vy[i]*.94+gy*.24+(f.paper[d]-f.paper[u])*wi*.13));nx[i]=vx;ny[i]=vy;
